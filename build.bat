@@ -6,8 +6,7 @@ if "%1"=="" (
     exit /b 1
 )
 
-
 set filename=%1
-set outputname=%dist/filename:.c=%
+set outputname=%filename:.c=%
 
-gcc !filename! src/icu.c -o !outputname!
+gcc !filename! icu.c -o !outputname!

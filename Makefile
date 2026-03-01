@@ -5,8 +5,8 @@ MAJOR_VERSION := $(shell echo $(VERSION) | cut -d'.' -f1)
 DESTDIR ?= /usr/local
 MANDIR ?= share/man/man3
 
-SRC := src/icu26.c
-INCLUDE := src/icu26.h
+SRC := icu26.c
+INCLUDE := icu26.h
 MANS := $(wildcard docs/*.3.gz)
 
 CFLAGS=-Wall -Wextra -Werror -pedantic -std=c11
