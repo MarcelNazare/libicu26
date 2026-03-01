@@ -1,2 +1,13 @@
+@echo off
+setlocal enabledelayedexpansion
 
-gcc {filename} src/icu.c -o {filename:.c=} --- IGNORE ---
+if "%1"=="" (
+    echo Usage: build.bat filename
+    exit /b 1
+)
+
+
+set filename=%1
+set outputname=%dist/filename:.c=%
+
+gcc !filename! src/icu.c -o !outputname!
