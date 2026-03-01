@@ -147,5 +147,3 @@ uninstall:
 	rm -f $(addprefix $(DESTDIR)/$(MANDIR)/, get_*.3)
 
 
-compile:
-	gcc main.c $(SRC) -o program
