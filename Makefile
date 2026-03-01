@@ -10,7 +10,7 @@ INCLUDE := src/icu26.h
 MANS := $(wildcard docs/*.3.gz)
 
 CFLAGS=-Wall -Wextra -Werror -pedantic -std=c11
-BASENAME=libcs50
+BASENAME=libicu26
 LIB_STATIC=$(BASENAME).a
 LIB_OBJ=$(BASENAME).o
 
@@ -81,26 +81,26 @@ deb: $(LIBS) $(MANS)
 	    --after-remove postrm \
 	    --category libs \
 	    --chdir build/deb/$(BASENAME) \
-	    --conflicts lib50-c \
+	    --conflicts icu26-c \
 	    --conflicts $(BASENAME) \
-	    --conflicts library50-c \
+	    --conflicts library26-c \
 		--deb-no-default-config-files \
 	    --deb-priority optional \
-	    --description "CS50 library for C" \
+	    --description "ICU26 library for C" \
 	    --input-type dir \
 	    --license "MIT" \
-	    --maintainer "CS50 <sysadmins@cs50.harvard.edu>" \
+	    --maintainer "CS50 <realmarcelnazare@gmal.com>" \
 	    --name $(BASENAME) \
 	    --output-type deb \
 	    --package build/deb \
-	    --provides lib50-c \
+	    --provides lib26-c \
 	    --provides $(BASENAME) \
-	    --provides library50-c \
-	    --replaces lib50-c \
+	    --provides library26-c \
+	    --replaces lib26-c \
 	    --replaces $(BASENAME) \
-	    --replaces library50-c \
-	    --url https://github.com/cs50/libcs50 \
-	    --vendor CS50 \
+	    --replaces library26-c \
+	    --url https://github.com/MarcelNazare/libicu26 \
+	    --vendor MarcelNazare \
 	    --version $(VERSION) \
 	    .
 
@@ -119,16 +119,16 @@ rpm: $(LIBS) $(MANS)
 	    --after-remove postun \
 	    --category libs \
 	    --chdir build/rpm/$(BASENAME) \
-	    --description "CS50 library for C" \
+	    --description "ICU26 library for C" \
 	    --input-type dir \
 	    --license "MIT" \
-	    --maintainer "CS50 <sysadmins@cs50.harvard.edu>" \
+	    --maintainer "MarcelNazare <realmarcelnazare@gmail.com>" \
 	    --name $(BASENAME) \
 	    --output-type rpm \
 	    --package build/rpm \
 	    --provides $(BASENAME) \
-	    --url https://github.com/cs50/libcs50 \
-	    --vendor CS50 \
+	    --url https://github.com/MarcelNazare/libicu26 \
+	    --vendor MarcelNazare \
 	    --version $(VERSION) \
 	    .
 
@@ -141,8 +141,8 @@ version:
 
 .PHONY: uninstall
 uninstall:
-	rm -f $(DESTDIR)/include/cs50.h
-	rm -rf $(DESTDIR)/src/cs50.c
+	rm -f $(DESTDIR)/include/icu26.h
+	rm -rf $(DESTDIR)/src/icu26.c
 	rm -f $(addprefix $(DESTDIR)/lib/, $(LIB_BASE) $(LIB_MAJOR) $(LIB_VERSION))
 	rm -f $(addprefix $(DESTDIR)/$(MANDIR)/, get_*.3)
 
