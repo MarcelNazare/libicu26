@@ -102,6 +102,45 @@ gcc main.c icu26.c -o myapp.exe
 
 _Note: Visual Studio compiles `.c` files as C code automatically._
 
+### Using Build Scripts
+
+For convenience, you can use the provided build scripts to compile your project.
+
+#### Linux / macOS (`build.sh`)
+
+```bash
+#!/bin/bash
+
+# Check if a filename was provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 filename.c"
+    exit 1
+fi
+
+filename="$1"
+outputname="${filename%.c}"
+
+# Compile with icu26.c
+gcc "$filename" icu26.c -o "$outputname"
+```
+
+#### Windows (`build.bat`)
+
+```bat
+@echo off
+setlocal enabledelayedexpansion
+
+if "%1"=="" (
+    echo Usage: build.bat filename
+    exit /b 1
+)
+
+set filename=%1
+set outputname=%filename:.c=%
+
+gcc !filename! icu26.c -o !outputname!
+```
+
 ## API Reference
 
 All functions accept a `printf`-style format string for the prompt.
