@@ -471,9 +471,9 @@ static void teardown(void)
         static void FUNC(void) __attribute__((constructor)); \
         static void FUNC(void)
 #else
-    #error The CS50 library requires some compiler-specific features, \
+    #error The ICU26 library requires some compiler-specific features, \
            but we do not recognize this compiler/version. Please file an issue at \
-           https://github.com/cs50/libcs50
+           https://github.com/marcelnazare/libicu26
 #endif
 
 /**
