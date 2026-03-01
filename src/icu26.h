@@ -1,10 +1,10 @@
 /**
- * CS50 Library for C
- * https://github.com/cs50/libcs50
+ * ICU26 Library for C
+ * https://github.com/marcelnazare/libicu26
  *
- * Based on Eric Roberts' genlib.c and simpio.c.
+ * Created by Marcel Nazare
  *
- * Copyright (c) 2023
+ * Copyright (c) 2026
  * All rights reserved
  *
  * BSD 3-Clause License
@@ -19,7 +19,7 @@
  * * Redistributions in binary form must reproduce the above copyright
  *   notice, this list of conditions and the following disclaimer in the
  *   documentation and/or other materials provided with the distribution.
- * * Neither the name of CS50 nor the names of its contributors may be used
+ * * Neither the name of ICU26 nor the names of its contributors may be used
  *   to endorse or promote products derived from this software without
  *   specific prior written permission.
  *
@@ -36,8 +36,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef CS50_H
-#define CS50_H
+#ifndef ICU26_H
+#define ICU26_H
 
 #include <float.h>
 #include <limits.h>

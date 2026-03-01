@@ -5,8 +5,8 @@ MAJOR_VERSION := $(shell echo $(VERSION) | cut -d'.' -f1)
 DESTDIR ?= /usr/local
 MANDIR ?= share/man/man3
 
-SRC := src/cs50.c
-INCLUDE := src/cs50.h
+SRC := src/icu26.c
+INCLUDE := src/icu26.h
 MANS := $(wildcard docs/*.3.gz)
 
 CFLAGS=-Wall -Wextra -Werror -pedantic -std=c11
@@ -145,3 +145,7 @@ uninstall:
 	rm -rf $(DESTDIR)/src/cs50.c
 	rm -f $(addprefix $(DESTDIR)/lib/, $(LIB_BASE) $(LIB_MAJOR) $(LIB_VERSION))
 	rm -f $(addprefix $(DESTDIR)/$(MANDIR)/, get_*.3)
+
+
+compile:
+	gcc main.c $(SRC) -o program
